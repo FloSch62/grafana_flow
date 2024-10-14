@@ -1,8 +1,7 @@
 cells:
-  leaf1-port1:
-    dataRef: "traffic-rate-leaf1-port1"
-    labelColor:
+  "leaf1:e1-53:spine1:e1-1":
+    dataRef: "gnmic_srl_if_oper_state_oper_state{source='leaf1', interface_name='e1-53'}"
+    fillColor:
       thresholds:
-        - {color: "green", level: 0}
-        - {color: "orange", level: 100}
-        - {color: "red", level: 200}
+        - {color: "green", level: 1}   # '1' for 'up'
+        - {color: "red", level: 0}     # '0' for 'down'
