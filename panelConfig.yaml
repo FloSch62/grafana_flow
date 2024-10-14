@@ -1,6 +1,8 @@
+---
+cellIdPreamble: "cell-"
 cells:
-  "leaf51:e1-53:spine1:e1-1":
-    dataRef: "gnmic_srl_if_oper_state_oper_state{source='leaf1', interface_name='e1-53'}"
+  leaf51:e1-53:spine1:e1-1:
+    dataRef: "gnmic_srl_if_oper_state_oper_state"
     fillColor:
       thresholds:
         - {color: "green", level: 1}   # '1' for 'up'
