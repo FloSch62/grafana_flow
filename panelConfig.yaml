@@ -12,6 +12,7 @@ cells:
   "traffic_leaf1:e1-53:spine1:e1-1":
     dataRef: "leaf1:ethernet-1/49:in"
     label:
-      separator: " "
-      unitsPostfix: "kb/s"  # Appends 'kb/s' to the label after the value
-      decimalPoints: 1  # Adjust as needed for precision
+      separator: "replace"
+      units: "none"
+      unitsPostfix: "kb/s"
+      decimalPoints: 1
