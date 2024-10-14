@@ -13,6 +13,14 @@ cells:
     dataRef: "leaf1:ethernet-1/49:in"
     label:
       separator: "replace"
-      units: "none"
-      unitsPostfix: "kb/s"
+      units: "bps"
       decimalPoints: 1
+  "traffic_leaf1:e1-53:spine1:e1-1":
+    dataRef: "leaf1:ethernet-1/49:in"
+    fillColor:
+      gradientMode: "hue"
+      thresholds:
+        - { color: "green", level: 0 }
+        - { color: "yellow", level: 500000 }   # 500,000 bps (500 Kbps)
+        - { color: "orange", level: 1000000 }  # 1,000,000 bps (1 Mbps)
+        - { color: "red", level: 5000000 }     # 5,000,000 bps (5 Mbps)
