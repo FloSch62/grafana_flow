@@ -1,25 +1,65 @@
 ---
 
+#------------------------------------------------------------------------------
+# YAML Anchors and Aliases to simplify maintenance
+
+anchors:
+  # Thresholds for operational state (fillColor)
+  thresholds-operstate: &thresholds-operstate
+    - { color: "red", level: 0 }
+    - { color: "green", level: 1 }
+
+  # Thresholds for traffic (strokeColor)
+  thresholds-traffic: &thresholds-traffic
+    - { color: "green", level: 0 }
+    - { color: "yellow", level: 500000 }    # 500,000 bps (500 Kbps)
+    - { color: "orange", level: 1000000 }   # 1,000,000 bps (1 Mbps)
+    - { color: "red", level: 5000000 }      # 5,000,000 bps (5 Mbps)
+
+  # Label configuration
+  label-config: &label-config
+    separator: "replace"
+    units: "bps"
+    decimalPoints: 1
+
+#------------------------------------------------------------------------------
+# Panel Config
+
 cellIdPreamble: "cell-"
 
 cells:
+  #------------------------------------------------------------------------------
+  # Leaf1 Cells
+
   "leaf1:e1-53:spine1:e1-1":
     dataRef: "oper-state:leaf1:ethernet-1/49"
     fillColor:
-      thresholds:
-        - { color: "red", level: 0 }
-        - { color: "green", level: 1 }
+      thresholds: *thresholds-operstate
+
   "thats_the_label":
     dataRef: "leaf1:ethernet-1/49:in"
     label:
-      separator: "replace"
-      units: "bps"
-      decimalPoints: 1
+      <<: *label-config
+
   "traffic_leaf1:e1-53:spine1:e1-1":
     dataRef: "leaf1:ethernet-1/49:in"
     strokeColor:
-      thresholds:
-        - { color: "green", level: 0 }
-        - { color: "yellow", level: 500000 }   # 500,000 bps (500 Kbps)
-        - { color: "orange", level: 1000000 }  # 1,000,000 bps (1 Mbps)
-        - { color: "red", level: 5000000 }     # 5,000,000 bps (5 Mbps)
+      thresholds: *thresholds-traffic
+
+  #------------------------------------------------------------------------------
+  # Leaf2 Cells
+
+  "leaf2:e1-54:spine1:e1-2":
+    dataRef: "oper-state:leaf2:ethernet-1/50"   # Adjust the dataRef as per your actual data
+    fillColor:
+      thresholds: *thresholds-operstate
+
+  "thats_the_label_leaf2":
+    dataRef: "leaf2:ethernet-1/50:in"
+    label:
+      <<: *label-config
+
+  "traffic_leaf2:e1-54:spine1:e1-2":
+    dataRef: "leaf2:ethernet-1/50:in"
+    strokeColor:
+      thresholds: *thresholds-traffic
