@@ -1,5 +1,4 @@
 ---
-
 #------------------------------------------------------------------------------
 # YAML Anchors and Aliases to simplify maintenance
 
@@ -38,8 +37,7 @@ cells:
 
   "thats_the_label":
     dataRef: "leaf1:ethernet-1/49:in"
-    label:
-      <<: *label-config
+    label: *label-config
 
   "traffic_leaf1:e1-53:spine1:e1-1":
     dataRef: "leaf1:ethernet-1/49:in"
@@ -50,14 +48,13 @@ cells:
   # Leaf2 Cells
 
   "leaf2:e1-54:spine1:e1-2":
-    dataRef: "oper-state:leaf2:ethernet-1/50"   # Adjust the dataRef as per your actual data
+    dataRef: "oper-state:leaf2:ethernet-1/50"
     fillColor:
       thresholds: *thresholds-operstate
 
   "thats_the_label_leaf2":
     dataRef: "leaf2:ethernet-1/50:in"
-    label:
-      <<: *label-config
+    label: *label-config
 
   "traffic_leaf2:e1-54:spine1:e1-2":
     dataRef: "leaf2:ethernet-1/50:in"
