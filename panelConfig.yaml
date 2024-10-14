@@ -1,7 +1,7 @@
 ---
 cellIdPreamble: "cell-"
 cells:
-  leaf51:e1-53:spine1:e1-1:
+  leaf1:e1-53:spine1:e1-1:
     dataRef: "gnmic_srl_if_oper_state_oper_state"
     fillColor:
       thresholds:
