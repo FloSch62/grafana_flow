@@ -1,5 +1,5 @@
 cells:
-  "leaf1:e1-53:spine1:e1-1":
+  "leaf51:e1-53:spine1:e1-1":
     dataRef: "gnmic_srl_if_oper_state_oper_state{source='leaf1', interface_name='e1-53'}"
     fillColor:
       thresholds:
