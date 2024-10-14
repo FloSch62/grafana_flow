@@ -17,8 +17,7 @@ cells:
       decimalPoints: 1
   "traffic_leaf1:e1-53:spine1:e1-1":
     dataRef: "leaf1:ethernet-1/49:in"
-    fillColor:
-      gradientMode: "hue"
+    strokeColor:
       thresholds:
         - { color: "green", level: 0 }
         - { color: "yellow", level: 500000 }   # 500,000 bps (500 Kbps)
