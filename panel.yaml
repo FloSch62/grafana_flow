@@ -1,0 +1,18 @@
+---
+
+cellIdPreamble: "cell-"
+
+cells:
+  "leaf1:e1-53:spine1:e1-1":
+    dataRef: "oper-state:leaf1:ethernet-1/49"
+    fillColor:
+      thresholds:
+        - { color: "red", level: 0 }
+        - { color: "green", level: 1 }
+  "thats_the_label":
+    dataRef: "leaf1:ethernet-1/49:in"
+    label:
+      separator: "replace"
+      units: "none"
+      unitsPostfix: "kb/s"
+      decimalPoints: 1
