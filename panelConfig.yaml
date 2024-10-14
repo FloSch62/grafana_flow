@@ -1,0 +1,8 @@
+cells:
+  leaf1-port1:
+    dataRef: "traffic-rate-leaf1-port1"
+    labelColor:
+      thresholds:
+        - {color: "green", level: 0}
+        - {color: "orange", level: 100}
+        - {color: "red", level: 200}
